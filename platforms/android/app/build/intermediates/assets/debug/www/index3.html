@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Markers</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0,0,0,0.54);
+        }
+
+        #btn{
+
+            margin-bottom: 2%;
+            margin-top: 2%;
+
+            height: 300%;
+            width: 30%;
+            border-color: gray ;
+            border-width: 6px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            font-weight: bold;
+            font-size: 130%;
+        }
+
+        #topbar{
+
+
+            background-color: black;
+
+        }
+
+    </style>
+</head>
+<body style="text-align: center">
+
+<div id="topbar"> <button rel="prefetch"  id="btn" onclick="getLocation()"> Find My Location </button> </div>
+
+<div id="map"></div>
+
+
+
+<script>
+    function getLocation() {
+    navigator.geolocation.getCurrentPosition(initMap);
+    }
+    function initMap(position) {
+
+        var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "I am Here",
+            animation: google.maps.Animation.DROP,
+            animation: google.maps.Animation.BOUNCE
+        });
+    }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH4mFZBLkWzyCnp0qp3KxPfXrIv1k3tx8&callback=initMap">
+</script>
+</body>
+
+</body>
+</html>

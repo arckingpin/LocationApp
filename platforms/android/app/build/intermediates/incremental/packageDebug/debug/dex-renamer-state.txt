@@ -1,0 +1,4 @@
+#Wed Aug 08 22:03:40 IST 2018
+base.0=C\:\\Users\\Abir Roy Chowdhury\\source\\cordova-samples-master\\mylocation\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=C\:\\Users\\Abir Roy Chowdhury\\source\\cordova-samples-master\\mylocation\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
